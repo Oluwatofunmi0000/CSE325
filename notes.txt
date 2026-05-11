@@ -1,0 +1,102 @@
+W01 Assignment Evidence and Notes
+
+1. **PizzaApi**: Evidence of additional pizza record and CRUD API testing will be added here after implementation.
+2. **SalesReportApp**: The sales summary function code will be included here after implementation.
+
+(Complete this file as you finish each part of the assignment.)
+
+---
+
+PizzaApi CRUD API Test Evidence
+
+GET /api/Pizzas
+Request: None
+Response: 200 OK
+[
+  {
+    "id": 1,
+    "name": "Margherita",
+    "description": "Classic cheese and tomato",
+    "price": 8.99
+  },
+  {
+    "id": 2,
+    "name": "Pepperoni",
+    "description": "Pepperoni and cheese",
+    "price": 9.99
+  },
+  {
+    "id": 3,
+    "name": "Veggie",
+    "description": "Peppers, onions, mushrooms",
+    "price": 10.49
+  }
+]
+
+POST /api/Pizzas
+Request Body:
+{
+  "name": "BBQ Chicken",
+  "description": "Chicken, BBQ sauce, onions",
+  "price": 11.99
+}
+Response: 201 Created
+{
+  "id": 4,
+  "name": "BBQ Chicken",
+  "description": "Chicken, BBQ sauce, onions",
+  "price": 11.99
+}
+
+PUT /api/Pizzas/4
+Request Body:
+{
+  "id": 4,
+  "name": "BBQ Chicken Deluxe",
+  "description": "Chicken, BBQ sauce, onions, peppers",
+  "price": 12.99
+}
+Response: 204 No Content
+
+DELETE /api/Pizzas/4
+Request: None
+Response: 204 No Content
+
+---
+
+Evidence: The Veggie pizza (id 3) is the additional record added for the assignment.
+
+---
+
+SalesReportApp Sales Summary Function
+
+```
+public static void GenerateSalesSummary(string directory, string outputFile)
+{
+    var sb = new StringBuilder();
+    decimal totalSales = 0;
+    sb.AppendLine("Sales Summary");
+    sb.AppendLine("----------------------------");
+
+    var details = new StringBuilder();
+    foreach (var file in Directory.GetFiles(directory, "*.txt"))
+    {
+        decimal fileTotal = 0;
+        foreach (var line in File.ReadAllLines(file))
+        {
+            if (decimal.TryParse(line, NumberStyles.Currency, CultureInfo.InvariantCulture, out decimal sale))
+                fileTotal += sale;
+        }
+        totalSales += fileTotal;
+        details.AppendLine($"  {Path.GetFileName(file)}: {fileTotal:C}");
+    }
+
+    sb.AppendLine($" Total Sales: {totalSales:C}\n");
+    sb.AppendLine(" Details:");
+    sb.Append(details);
+
+    File.WriteAllText(outputFile, sb.ToString());
+}
+```
+
+---

@@ -1,0 +1,14 @@
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\bin\Debug\net10.0\SalesReportApp.exe
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\bin\Debug\net10.0\SalesReportApp.deps.json
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\bin\Debug\net10.0\SalesReportApp.runtimeconfig.json
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\bin\Debug\net10.0\SalesReportApp.dll
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\bin\Debug\net10.0\SalesReportApp.pdb
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.AssemblyInfoInputs.cache
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.AssemblyInfo.cs
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.csproj.CoreCompileInputs.cache
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.dll
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\refint\SalesReportApp.dll
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.pdb
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\SalesReportApp.genruntimeconfig.cache
+C:\Users\HP15\Desktop\CSE325\SalesReportApp\obj\Debug\net10.0\ref\SalesReportApp.dll
