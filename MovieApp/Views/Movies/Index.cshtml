@@ -1,0 +1,48 @@
+@model IEnumerable<MovieApp.Models.Movie>
+@{
+    ViewData["Title"] = "My Movies";
+}
+<h1 class="mb-4">@ViewData["Title"]</h1>
+<form asp-action="Index" method="get" class="mb-3">
+    <div style="display:flex;gap:10px;align-items:center;">
+        <input type="text" name="searchString" value="@Context.Request.Query["searchString"]"
+               placeholder="Search by title" style="padding:8px;" />
+        <select name="year" style="padding:8px;">
+            <option value="">All Years</option>
+            @for (int y = DateTime.Now.Year; y >= 1900; y--)
+            {
+                var selected = Context.Request.Query["year"] == y.ToString() ? "selected" : "";
+                <option value="@y" selected="@selected">@y</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Genre</td>
+                <td>@item.Year</td>
+                <td>@item.Director</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-success">Add New Movie</a>
